@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4"> </div>
+        <div class="col-4">
+            {%if messages%}
+                {%for msg in messages%}
+                    {%if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS%}
+                     <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <strong>Holy guacamole!</strong> {{msg}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {%endif%}
+                    {%if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Holy guacamole!</strong> {{msg}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {%endif%}
+
+                {%endfor%}
+            {%endif%}
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+<form action="" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <div class="row">
+        <div class="col-4">
+            <input type="file" name="profile_pic" id="id_profile_pic">
+        </div>
+        <div class="col-4">
+            <input type="text" name="eid" id="id_eid" placeholder="eneter emp ID">
+            <input type="text" name="employee_name" id="id_employee_name" placeholder="employee name">
+            <input type="text" name="designation" id="id_designation" placeholder="designation">
+        </div>
+        <div class="col-4">
+            <input type="text" name="salary" id="id_salary" placeholder="salary" >
+            <input type="text" name="email" id="id_email" placeholder="email" >
+            <input type="text" name="experience" id="id_experience" placeholder="experience">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <input type="submit">
+        </div>
+        <div class="col-4"></div>
+    </div>
+</form>
+    </div>
+{%endblock%}

@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+               <img src="{{employee.profile_pic.url}}" class="card-img-top" alt="...">
+                   <div class="card-body">
+                      <h5 class="card-title">{{employee.employee_name}}</h5>
+                      <p class="card-text">{{employee.eid}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{employee.designation}}</li>
+    <li class="list-group-item">{{employee.salary}}</li>
+    <li class="list-group-item">{{employee.email}}</li>
+      <li class="list-group-item">experience:{{employee.experience}}</li>
+  </ul>
+  <div class="card-body">
+<!--    <a href="#" class="card-link">Card link</a>-->
+<!--    <a href="#" class="card-link">Another link</a>-->
+  </div>
+</div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{%endblock%}
